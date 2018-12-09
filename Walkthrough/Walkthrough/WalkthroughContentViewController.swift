@@ -10,7 +10,7 @@ import UIKit
 
 class WalkthroughContentViewController: UIViewController {
 
-    @IBOutlet weak var displayImage: UIImageView!
+    @IBOutlet weak var displayImageView: UIImageView!
     var image: UIImage?
     var pageIndex: Int
     
@@ -27,7 +27,9 @@ class WalkthroughContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.displayImage.image = self.image
+        self.displayImageView.image = self.image
+        self.displayImageView.contentMode = .scaleAspectFill
+        self.displayImageView.clipsToBounds = true
     }
 
 }

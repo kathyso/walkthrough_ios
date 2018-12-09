@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalkthroughContentViewController" customModule="Walkthrough" customModuleProvider="target">
             <connections>
-                <outlet property="displayImage" destination="Rcj-lf-DmP" id="p06-Dr-fFr"/>
+                <outlet property="displayImageView" destination="Rcj-lf-DmP" id="boP-F9-9gy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
