@@ -10,9 +10,9 @@ import UIKit
 
 class WalkthroughInfo {
     
-    let images: [UIImage] = []
+    var images: [UIImage?] = []
     
-    init(images: [UIImage]) {
+    init(images: [UIImage?]) {
         self.images = images
     }
 }
