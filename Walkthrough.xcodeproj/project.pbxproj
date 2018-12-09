@@ -18,6 +18,7 @@
 		E32B4A1F21BD08CF00306FA2 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B4A1D21BD08CF00306FA2 /* WalkthroughContentViewController.swift */; };
 		E32B4A2021BD08CF00306FA2 /* WalkthroughContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E32B4A1E21BD08CF00306FA2 /* WalkthroughContentViewController.xib */; };
 		E32B4A2221BD08DF00306FA2 /* WalkthroughHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B4A2121BD08DF00306FA2 /* WalkthroughHelper.swift */; };
+		E32B4A2921BD0CAC00306FA2 /* WalkthroughInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B4A2821BD0CAC00306FA2 /* WalkthroughInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E32B4A1D21BD08CF00306FA2 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		E32B4A1E21BD08CF00306FA2 /* WalkthroughContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkthroughContentViewController.xib; sourceTree = "<group>"; };
 		E32B4A2121BD08DF00306FA2 /* WalkthroughHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughHelper.swift; sourceTree = "<group>"; };
+		E32B4A2821BD0CAC00306FA2 /* WalkthroughInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		E32B49F621BD060000306FA2 /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
+				E32B4A2721BD0C9300306FA2 /* Model */,
 				E32B4A1821BD07D300306FA2 /* Walkthrough */,
 				E32B4A1721BD07CB00306FA2 /* Helper */,
 				E32B49F721BD060000306FA2 /* AppDelegate.swift */,
@@ -125,6 +128,14 @@
 				E32B4A1E21BD08CF00306FA2 /* WalkthroughContentViewController.xib */,
 			);
 			path = Walkthrough;
+			sourceTree = "<group>";
+		};
+		E32B4A2721BD0C9300306FA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E32B4A2821BD0CAC00306FA2 /* WalkthroughInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 			files = (
 				E32B4A2221BD08DF00306FA2 /* WalkthroughHelper.swift in Sources */,
 				E32B4A1B21BD08AA00306FA2 /* WalkthroughPageViewController.swift in Sources */,
+				E32B4A2921BD0CAC00306FA2 /* WalkthroughInfo.swift in Sources */,
 				E32B49FA21BD060000306FA2 /* ViewController.swift in Sources */,
 				E32B49F821BD060000306FA2 /* AppDelegate.swift in Sources */,
 				E32B4A1F21BD08CF00306FA2 /* WalkthroughContentViewController.swift in Sources */,
