@@ -1,0 +1,6 @@
+framework module Pods_Walkthrough {
+  umbrella header "Pods-Walkthrough-umbrella.h"
+
+  export *
+  module * { export * }
+}
