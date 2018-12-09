@@ -20,6 +20,27 @@ class WalkthroughPageViewController: UIViewController {
     weak var pageViewController: UIPageViewController!
     var controllers = [UIViewController]()
     
+//    var currentIndex: Int {
+//        get {
+//            if let firstPageController = self.pageViewController.viewControllers?.first {
+//                return self.controllers.index(of: firstPageController) ?? 0
+//            } else {
+//                return 0
+//            }
+//        }
+//        
+//        set {
+//            guard newValue >= 0,
+//                newValue < self.controllers.count else {
+//                    return
+//            }
+//            
+//            let vc = self.controllers[newValue]
+//            let direction:UIPageViewController.NavigationDirection = newValue > currentIndex ? .forward : .reverse
+//            self.pageViewController.setViewControllers([vc], direction: direction, animated: true, completion: nil)
+//        }
+//    }
+    
     let walkthroughInfo: WalkthroughInfo
     let walkthroughType: WalkthroughHelper.WalkthroughType
     
@@ -50,7 +71,7 @@ class WalkthroughPageViewController: UIViewController {
         
         self.addPageViewController()
         self.setupViewControllers()
-        self.updateButtonLayout(isLastPage: false)
+        self.updateButtonLayout()
     }
     
     func addPageViewController() {
@@ -103,7 +124,6 @@ extension WalkthroughPageViewController {
             if index == 0 {
                 return nil
             } else {
-                self.updateButtonLayout(isLastPage: false)
                 let previousIndex = index - 1
                 return self.viewControllerAtIndex(index: previousIndex)
             }
@@ -114,7 +134,6 @@ extension WalkthroughPageViewController {
     func getNextViewController(from viewController: UIViewController) -> UIViewController? {
         if let index = self.controllers.index(of: viewController) {
             if index == self.controllers.count - 1 {
-                self.updateButtonLayout(isLastPage: true)
                 return nil
             } else {
                 let nextIndex = index + 1
@@ -131,13 +150,13 @@ extension WalkthroughPageViewController {
         }
     }
     
-    func updateButtonLayout(isLastPage: Bool) {
-        self.skipButton.isHidden = isLastPage
-        self.nextButton.isHidden = isLastPage
-        self.finishButton.isHidden = !isLastPage
-        
-        UIView.animate(withDuration: 0.24) {
-            self.view.layoutIfNeeded()
+    func updateButtonLayout() {
+        if let controller = self.pageViewController.viewControllers?.first,
+            let vc = controller as? WalkthroughContentViewController {
+            let isLastPage = vc.pageIndex == self.walkthroughInfo.images.count - 1
+            self.skipButton.isHidden = isLastPage
+            self.nextButton.isHidden = isLastPage
+            self.finishButton.isHidden = !isLastPage
         }
     }
     
@@ -149,6 +168,7 @@ extension WalkthroughPageViewController {
         
         self.pageViewController.setViewControllers([vc], direction: .forward, animated: true) { [weak self] (_) in
             self?.updatePageIndex()
+            self?.updateButtonLayout()
         }
     }
 }
@@ -156,6 +176,7 @@ extension WalkthroughPageViewController {
 extension WalkthroughPageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         self.updatePageIndex()
+        self.updateButtonLayout()
     }
 }
 
@@ -167,4 +188,8 @@ extension WalkthroughPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         return self.getNextViewController(from: viewController)
     }
+    
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return self.currentIndex
+//    }
 }
