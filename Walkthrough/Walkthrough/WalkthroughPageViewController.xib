@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalkthroughPageViewController" customModule="Walkthrough" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="uM0-nW-BQu" id="GuG-RQ-SbC"/>
+                <outlet property="finishButton" destination="1MC-IC-WHA" id="77O-3d-Cj7"/>
+                <outlet property="nextButton" destination="LXA-V6-xyb" id="cpB-Bq-kI9"/>
+                <outlet property="pageControl" destination="Tmw-dZ-anS" id="kK1-F9-0Gs"/>
+                <outlet property="skipButton" destination="NYb-zA-EgX" id="TMQ-8b-N5C"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uM0-nW-BQu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Tmw-dZ-anS">
+                    <rect key="frame" x="168" y="610" width="39" height="37"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYb-zA-EgX">
+                    <rect key="frame" x="20" y="617" width="30" height="30"/>
+                    <state key="normal" title="Skip"/>
+                    <connections>
+                        <action selector="skipButtonDidPress:" destination="-1" eventType="touchUpInside" id="BuC-2a-nBq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-V6-xyb">
+                    <rect key="frame" x="323" y="617" width="32" height="30"/>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextButtonDidPress:" destination="-1" eventType="touchUpInside" id="XCg-yq-YPu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MC-IC-WHA">
+                    <rect key="frame" x="314" y="617" width="41" height="30"/>
+                    <state key="normal" title="Finish"/>
+                    <connections>
+                        <action selector="finishButtonDidPress:" destination="-1" eventType="touchUpInside" id="uRS-Ie-u7k"/>
+                        <action selector="nextButtonDidPress:" destination="-1" eventType="touchUpInside" id="qmF-um-IFB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uM0-nW-BQu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="14r-sj-g55"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LXA-V6-xyb" secondAttribute="trailing" constant="20" id="2tl-Sl-9g1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1MC-IC-WHA" secondAttribute="bottom" constant="20" id="5iO-yL-ep6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NYb-zA-EgX" secondAttribute="bottom" constant="20" id="Fnv-qv-1va"/>
+                <constraint firstItem="NYb-zA-EgX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LXR-OP-vxE"/>
+                <constraint firstItem="uM0-nW-BQu" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="YbN-Tl-ZX7"/>
+                <constraint firstItem="uM0-nW-BQu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ajg-Kn-R0u"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LXA-V6-xyb" secondAttribute="bottom" constant="20" id="fT3-Dq-eQL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Tmw-dZ-anS" secondAttribute="bottom" constant="20" id="k60-rh-D9j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1MC-IC-WHA" secondAttribute="trailing" constant="20" id="qCZ-Bk-kyS"/>
+                <constraint firstItem="Tmw-dZ-anS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qzC-VI-diP"/>
+                <constraint firstItem="uM0-nW-BQu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xU4-0E-lOp"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+</document>
